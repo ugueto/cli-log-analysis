@@ -1,0 +1,15 @@
+If you wish to perform:
+
+All operations -a argument
+Seconds -s argument : Events per second are considered as an average of events done per second in the entire file. *Transform to datetime (import datetime + datetime.datetime.fromtimestamp( # epoch_time here ))
+Most Frequent IP -mfip argument
+Least Frequent IP -lfip argument
+Total amount of bytes exchanged -be argument : sum of Response header size and Response size in each log.
+
+For example: cli-log-analysis path/one/input -a path/two/output 
+
+
+--> argparse module for CLI tool.
+--> datetime module to change epoch UNIX format to timestamp.
+--> json module to return output in JSON format.
+
