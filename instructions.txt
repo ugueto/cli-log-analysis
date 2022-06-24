@@ -5,7 +5,7 @@ Steps:
 Single-dash for one letter arguments and double-dash for multiple letter arguments.
 
 Operations:
--> All operations -a argument
+
 -> Seconds -s argument : Events per second are considered as an average of events done per second in the entire file. *Transform to datetime (import datetime + datetime.datetime.fromtimestamp( # epoch_time here ))
 -> Most Frequent IP --mfip argument
 -> Least Frequent IP --lfip argument
