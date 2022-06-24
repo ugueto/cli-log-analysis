@@ -6,24 +6,27 @@ class Operations:
         self.obj = obj
 
     def all_operations(self):
-        eps = self.events_per_second()
+        events_per_second = self.events_per_second()
         mfip = self.most_frequent_ip()
         lfip = self.least_frequent_ip()
         total_bytes_exchanged = self.total_bytes_exchanged()
-        return eps, mfip, lfip, total_bytes_exchanged
+        return {"Events Per Second": events_per_second,
+                "Most Frequent IP Address": mfip,
+                "Least Frequent IP Address": lfip,
+                "Total Bytes Exchanged": total_bytes_exchanged}
 
     def events_per_second(self):
         self.obj['timestamp'] = self.obj['timestamp'].apply(lambda x: int(float(x)) if x else 0)
         eps = self.obj['timestamp'].value_counts().sum() / self.obj['timestamp'].value_counts().size
-        return eps
+        return {"Events Per Second": eps}
 
     def most_frequent_ip(self):
         # The mode (most frequent value) of the Client IP Address column in the Pandas DataFrame.
-        return self.obj['client_ip_address'].mode()
+        return {"Most Frequent IP Address": self.obj['client_ip_address'].mode()[0]}
 
     def least_frequent_ip(self):
         # Calculate the frequency of all values in the Client IP Address column and returning the least frequent.
-        return self.obj['client_ip_address'].value_counts().index[-1]
+        return {"Least Frequent IP Address": self.obj['client_ip_address'].value_counts().index[-1]}
 
     def total_bytes_exchanged(self):
         # Change NaN values in both columns to zero.
@@ -37,4 +40,4 @@ class Operations:
         # Calculate total sum of both columns.
         bytes_exchanged = self.obj['response_header_size'].sum() + self.obj['response_size'].sum()
 
-        return bytes_exchanged
+        return {"Total Bytes Exchanged": bytes_exchanged}

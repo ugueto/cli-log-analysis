@@ -1,12 +1,7 @@
-# argparse is a standard Python library for command line interfaces.
 import argparse
-# import datetime
-import itertools
-# import json
+import json
 from file_processor import process_input
 from operations import Operations
-# import os
-# import sys
 
 
 def main():
@@ -31,7 +26,6 @@ def main():
 
     args = log_parser.parse_args()
     args_dict = dict(vars(args))
-    operation_args = itertools.islice(args_dict.items(), 1, len(args_dict) - 1)
 
     # Process the input file given.
     data = process_input(args_dict['input_path'][0].name)
@@ -39,19 +33,18 @@ def main():
     # Pass the data into a Operations object.
     ops_data = Operations(data)
 
-    # Operations to perform based on arguments.
-    '''for key, val in operation_args:
-        # Perform a certain operation if value is equal to True.
-        if operation_args['all']:
-            pass
-        elif operation_args['s']:
-            pass
-        elif operation_args['mfip']:
-            pass
-        elif operation_args['lfip']:
-            pass
-        elif operation_args['be']:
-            pass'''
+    # Operations to perform based on arguments, perform a certain operation if value is equal to True.
+    with open(args_dict['input_path'][-1].name, "w") as f:
+        if args_dict['all']:
+            json.dump(ops_data.all_operations(), f)
+        elif args_dict['s']:
+            json.dump(ops_data.events_per_second(), f)
+        elif args_dict['mfip']:
+            json.dump(ops_data.most_frequent_ip(), f)
+        elif args_dict['lfip']:
+            json.dump(ops_data.least_frequent_ip(), f)
+        elif args_dict['be']:
+            json.dump(ops_data.total_bytes_exchanged(), f)
 
 
 if __name__ == "__main__":

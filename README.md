@@ -12,6 +12,7 @@
 5. Once the project is set up, run the following command on your terminal: "python main.py -h".
 6. If all went well, you should see something like this:
 ![help](https://github.com/ugueto/cli-log-analysis/blob/master/help.png?raw=true)
+7. Read through the help page and you are ready to get started.
 
 NOTES: 
 The application includes sample data for testing purposes.

@@ -19,7 +19,6 @@ def process_input(file_path):
         details = line.split(" ")
         details = [x.strip() for x in details if x]
         structure = {key: value for key, value in zip(log_format, details)}
-        print(structure)
         data.append(structure)
 
     # Pandas is an ideal Python library for performing operations/calculations on tabular data.
