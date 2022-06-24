@@ -11,13 +11,11 @@
     -> docker run cli-log-analysis
 5. Once the project is set up, run the following command on your terminal: "python main.py -h".
 6. If all went well, you should see something like this:
-![help](https://github.com/ugueto/cli-log-analysis/blob/[branch]/image.jpg?raw=true)
+![help](https://github.com/ugueto/cli-log-analysis/blob/master/help.png?raw=true)
 
 NOTES: 
 The application includes sample data for testing purposes.
 In order to begin, you must have a sample log file in the same format as the sample data. If not, please use the sample data (Different formats will be supported in later versions).
 
 
-In order to understand functionality, read the comments on instructions.txt file:
-    -> (base)/customers/ access all users
-    -> (base)/customers/email access specific users
+In order to better understand functionality, read the comments on instructions.txt file.
