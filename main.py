@@ -3,6 +3,8 @@ import argparse
 # import datetime
 import itertools
 # import json
+from file_processor import process_input
+from operations import Operations
 # import os
 # import sys
 
@@ -29,8 +31,13 @@ def main():
 
     args = log_parser.parse_args()
     args_dict = dict(vars(args))
-    print(args_dict)
     operation_args = itertools.islice(args_dict.items(), 1, len(args_dict) - 1)
+
+    # Process the input file given.
+    data = process_input(args_dict['input_path'][0].name)
+
+    # Pass the data into a Operations object.
+    ops_data = Operations(data)
 
     # Operations to perform based on arguments.
     '''for key, val in operation_args:

@@ -6,15 +6,16 @@ class Operations:
         self.obj = obj
 
     def all_operations(self):
-        events_per_second = 0  # self.events_per_second()
+        eps = self.events_per_second()
         mfip = self.most_frequent_ip()
         lfip = self.least_frequent_ip()
         total_bytes_exchanged = self.total_bytes_exchanged()
-        return events_per_second, mfip, lfip, total_bytes_exchanged
+        return eps, mfip, lfip, total_bytes_exchanged
 
     def events_per_second(self):
         self.obj['timestamp'] = self.obj['timestamp'].apply(lambda x: int(float(x)) if x else 0)
-        return 0
+        eps = self.obj['timestamp'].value_counts().sum() / self.obj['timestamp'].value_counts().size
+        return eps
 
     def most_frequent_ip(self):
         # The mode (most frequent value) of the Client IP Address column in the Pandas DataFrame.
