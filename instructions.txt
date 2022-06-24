@@ -1,17 +1,18 @@
-If you wish to perform:
+Steps:
+1. Parse arguments directly from the Command Line using the argparse Python library.
 
-I will use single-dash for one letter arguments and double-dash for multiple letter arguments.
+Single-dash for one letter arguments and double-dash for multiple letter arguments.
 
-All operations -a argument
-Seconds -s argument : Events per second are considered as an average of events done per second in the entire file. *Transform to datetime (import datetime + datetime.datetime.fromtimestamp( # epoch_time here ))
-Most Frequent IP --mfip argument
-Least Frequent IP --lfip argument
-Total amount of bytes exchanged --be argument : sum of Response header size and Response size in each log.
+Operations:
+-> All operations -a argument
+-> Seconds -s argument : Events per second are considered as an average of events done per second in the entire file. *Transform to datetime (import datetime + datetime.datetime.fromtimestamp( # epoch_time here ))
+-> Most Frequent IP --mfip argument
+-> Least Frequent IP --lfip argument
+-> Total amount of bytes exchanged --be argument : sum of Response header size and Response size in each log.
+ 
+2. Convert input file into a pandas DataFrame, in order to perform operations (file_converter.py).
 
-For example: cli-log-analysis path/one/input -a path/two/output 
+3. Perform operations on the input file.
 
-
---> argparse module for CLI tool.
---> datetime module to change epoch UNIX format to timestamp.
---> json module to return output in JSON format.
+4. Return results in a JSON format.
 
