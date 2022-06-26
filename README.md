@@ -14,9 +14,13 @@
 ![help](https://github.com/ugueto/cli-log-analysis/blob/master/img/help.png?raw=true)
 7. Read through the help page and you are ready to get started.
 
+
 NOTES: 
-The application includes sample data for testing purposes.
-In order to begin, you must have a sample log file in the same format as the sample data. If not, please use the sample data (Different formats will be supported in later versions).
+The application includes (compressed) sample data for testing purposes. First, extract the .log file and use it for testing.
+For example, after extracting, try this command from the app directory: "python main.py "./sample_data/access.log" "./results.json" -s" and see the results in the results.json file.
 
+In order to use this app, you must have a sample log file in the same format as the sample data. If not, please use the sample data.
 
-In order to better understand functionality, read the comments on instructions.txt file.
+(Different formats will be supported in later versions)
+
+To better understand functionality, read the comments on instructions.txt file.
