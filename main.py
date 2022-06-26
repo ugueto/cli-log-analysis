@@ -12,8 +12,6 @@ def main():
                                                 "to perform an operation.")
     log_parser.add_argument("input_path", nargs="+", type=argparse.FileType("r", encoding="UTF-8"),
                             help="Path to one or more plain text files, or a directory.")
-    log_parser.add_argument("-a", "--all", action="store_true",
-                            help="Perform all operations (--mfip, --lfip, -s, --be) to the log file.")
     log_parser.add_argument("-s", action="store_true", help="Events per second in the log file.")
     # Assumption: The following operations are directed to the Client IP address, and not the destination IP.
     log_parser.add_argument("--mfip", action="store_true", help="Most frequent IP address in the log file.")
@@ -28,22 +26,20 @@ def main():
     args_dict = dict(vars(args))
 
     # Process the input file given.
-    data = process_input(args_dict['input_path'][0].name)
+    data = process_input(args_dict["input_path"][0].name)
 
-    # Pass the data into a Operations object.
+    # Pass the sample_data into a Operations object.
     ops_data = Operations(data)
 
     # Operations to perform based on arguments, perform a certain operation if value is equal to True.
-    with open(args_dict['input_path'][-1].name, "w") as f:
-        if args_dict['all']:
-            json.dump(ops_data.all_operations(), f)
-        elif args_dict['s']:
+    with open(args_dict["output_path"][0].name, "a") as f:
+        if args_dict["s"]:
             json.dump(ops_data.events_per_second(), f)
-        elif args_dict['mfip']:
+        elif args_dict["mfip"]:
             json.dump(ops_data.most_frequent_ip(), f)
-        elif args_dict['lfip']:
+        elif args_dict["lfip"]:
             json.dump(ops_data.least_frequent_ip(), f)
-        elif args_dict['be']:
+        elif args_dict["be"]:
             json.dump(ops_data.total_bytes_exchanged(), f)
 
 

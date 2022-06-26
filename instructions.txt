@@ -13,7 +13,7 @@ Operations:
  
 2. Convert input file into a pandas DataFrame, in order to perform operations (file_converter.py).
 
-3. Perform operations on the input file.
+3. Perform operations on the input file (operations.py).
 
 4. Return results in a JSON format.
 
