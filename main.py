@@ -5,6 +5,8 @@ from operations import Operations
 
 
 def main():
+    """ The main function creates an argument parser directly from the command line,
+    which later passes these arguments to other functions in order to parse data and perform calculations. """
 
     log_parser = argparse.ArgumentParser(prog="Swiss Re log analyzer", description="Analyze the content of log files.",
                                          usage="%(prog)s [options]",

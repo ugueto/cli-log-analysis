@@ -6,6 +6,7 @@ class Operations:
         # After processing the input log file, we can create an Operations object that accepts a DataFrame as argument.
         self.obj = obj
 
+    # Issue #3 - the previous issues from file_processor could lead to errors in the Operations class.
     def events_per_second(self):
         self.obj["timestamp"] = self.obj["timestamp"].apply(lambda x: int(float(x)) if x else 0)
         eps = self.obj["timestamp"].value_counts().sum() / self.obj["timestamp"].value_counts().size

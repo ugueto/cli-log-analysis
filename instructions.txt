@@ -1,4 +1,4 @@
-Steps:
+Simplified process:
 
 1. Parse arguments directly from the Command Line using the argparse Python library.
 
