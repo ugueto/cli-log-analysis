@@ -24,7 +24,7 @@ class Operations:
         self.obj["response_header_size"] = self.obj["response_header_size"].fillna(0)
         self.obj["response_size"] = self.obj["response_size"].fillna(0)
 
-        # Change column sample_data type to int64.
+        # Change column data type to int64.
         self.obj["response_header_size"] = self.obj["response_header_size"].astype('int64')
         self.obj["response_size"] = self.obj["response_size"].astype('int64')
 
