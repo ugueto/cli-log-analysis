@@ -11,7 +11,7 @@
     -> docker run cli-log-analysis
 5. Once the project is set up and you are in the correct directory, run the following command on your terminal: "python main.py -h".
 6. If all went well, you should see something like this:
-![help](https://github.com/ugueto/cli-log-analysis/blob/master/img/help.png?raw=true)
+![help](https://github.com/ugueto/cli-log-analysis/blob/master/img/help.jpg?raw=true)
 7. Read through the help page and you are ready to get started.
 
 
@@ -29,4 +29,5 @@ _To be developed in future versions_:
 - Implement unit testing.
 - Implement an -a (all) operation.
 
-To better understand functionality, read the comments on instructions.txt file.
+(Different formats will be supported in later versions)
+
