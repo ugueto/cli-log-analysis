@@ -27,5 +27,6 @@ _To be developed in future versions_:
 - Different log formats will be supported.
 - Clean up software design.
 - Implement unit testing.
+- Implement an -a (all) operation.
 
 To better understand functionality, read the comments on instructions.txt file.
