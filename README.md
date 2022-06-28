@@ -21,6 +21,11 @@ For example, after extracting, try this command from the app directory: "python 
 
 In order to use this app, you must have a sample log file in the same format as the sample data. If not, please use the sample data.
 
-(Different formats will be supported in later versions)
+_To be developed in future versions_:
+- Bug fixes.
+- Multiple files/directory as input_path.
+- Different log formats will be supported.
+- Clean up software design.
+- Implement unit testing.
 
 To better understand functionality, read the comments on instructions.txt file.
