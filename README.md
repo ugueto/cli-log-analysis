@@ -19,7 +19,7 @@ NOTES:
 The application includes (compressed) sample data for testing purposes. First, extract the .log file and use it for testing.
 For example, after extracting, try this command from the app directory: "python main.py "./sample_data/access.log" "./results.json" -s" and see the results in the results.json file.
 
-In order to use this app, you must have a sample log file in the same format as the sample data. If not, please use the sample data.
+In order to use this app, you must have a log file in the same format as the sample data. If not, please use the sample data.
 
 _To be developed in future versions_:
 - Bug fixes.
