@@ -2,7 +2,7 @@ import argparse
 import json
 from file_processor import process_input
 from operations import Operations
-# import os.path
+import os.path
 
 
 def main():
@@ -25,33 +25,42 @@ def main():
                             help="Path to a file to save output in plain text JSON format.")
     log_parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 
+    # Parse arguments.
     args = log_parser.parse_args()
 
     args_dict = dict(vars(args))
 
+    # Create empty metrics dictionary to save output.
     metrics = {}
 
+    # Perform operations for each file included in the input_path.
     for file_path in args_dict["input_path"]:
 
-        # Process the input file given.
-        data = process_input(file_path)
+        # Check if file exists.
+        if os.path.exists(file_path):
+            # Process the input file given.
+            data = process_input(file_path)
 
-        # Pass the sample_data into a Operations object.
-        ops_data = Operations(data)
+            # Pass the sample_data into a Operations object.
+            ops_data = Operations(data)
 
-        metrics[file_path] = {}
+            # Create a separate key, value pair per file.
+            metrics[file_path] = {}
 
-        if args_dict["s"]:
-            metrics[file_path].update(ops_data.events_per_second())
-        elif args_dict["mfip"]:
-            metrics[file_path].update(ops_data.most_frequent_ip())
-        elif args_dict["lfip"]:
-            metrics[file_path].update(ops_data.least_frequent_ip())
-        elif args_dict["be"]:
-            metrics[file_path].update(ops_data.total_bytes_exchanged())
+            # Operations to perform based on arguments, perform a certain operation if value is equal to True.
+            if args_dict["s"]:
+                metrics[file_path].update(ops_data.events_per_second())
 
-    # Operations to perform based on arguments, perform a certain operation if value is equal to True.
+            if args_dict["mfip"]:
+                metrics[file_path].update(ops_data.most_frequent_ip())
 
+            if args_dict["lfip"]:
+                metrics[file_path].update(ops_data.least_frequent_ip())
+
+            if args_dict["be"]:
+                metrics[file_path].update(ops_data.total_bytes_exchanged())
+
+    # Append results to output JSON file.
     with open(args_dict["output_path"][0].name, "a") as f:
         json.dump(metrics, f)
 
