@@ -26,8 +26,8 @@ class Operations:
         self.obj["response_size"] = self.obj["response_size"].fillna(0)
 
         # Change column data type to int64.
-        self.obj["response_header_size"] = self.obj["response_header_size"].astype('int64')
-        self.obj["response_size"] = self.obj["response_size"].astype('int64')
+        self.obj["response_header_size"] = self.obj["response_header_size"].astype('int32')
+        self.obj["response_size"] = self.obj["response_size"].astype('int32')
 
         # Calculate total sum of both columns.
         bytes_exchanged = int(self.obj["response_header_size"].sum() + self.obj["response_size"].sum())

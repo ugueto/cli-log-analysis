@@ -10,9 +10,22 @@
     -> docker build --tag cli-log-analysis .
     -> docker run cli-log-analysis
 5. Once the project is set up and you are in the correct directory, run the following command on your terminal: "python main.py -h".
-6. If all went well, you should see something like this:
-![help](https://github.com/ugueto/cli-log-analysis/blob/master/img/help.jpg?raw=true)
-7. Read through the help page and you are ready to get started.
+   1. If all went well, you should see the following text:
+       >usage: Swiss Re log analyzer [options]
+        Analyze the content of log files. 
+        positional arguments:
+        input_path   Path to one or more plain text files, or a directory.
+        output_path  Path to a file to save output in plain text JSON format. 
+        optional arguments:
+     -h, --help   show this help message and exit
+     -s           Events per second in the log file.
+     --mfip       Most frequent IP address in the log file.
+     --lfip       Least frequent IP address in the log file.
+     --be         Total amount of bytes exchanged in the log file.
+     --version    show program's version number and exit 
+        NOTE: At least one optional argument must be chosen in order to perform an operation.
+
+6. Read through the help page and you are ready to get started.
 
 
 NOTES: 
@@ -23,11 +36,9 @@ In order to use this app, you must have a log file in the same format as the sam
 
 _Being developed for future versions_:
 - Bug fixes [ ]
-- Multiple files/directory as input_path [ ]
+- Multiple files/directory as input_path [ ] -> IN PROGRESS.
 - Different log formats will be supported. [ ]
 - Clean up software design [ ]
 - Implement unit testing [ ]
 - Implement an -a (all) operation [ ]
-
-(Different formats will be supported in later versions)
 
