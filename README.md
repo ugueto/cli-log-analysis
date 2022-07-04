@@ -36,7 +36,7 @@ In order to use this app, you must have a log file in the same format as the sam
 
 _Being developed for future versions_:
 - Bug fixes [ ]
-- Multiple files/directory as input_path [ ] -> IN PROGRESS.
+- Multiple files/directory as input_path [X]
 - Different log formats will be supported. [ ]
 - Clean up software design [ ]
 - Implement unit testing [ ]
