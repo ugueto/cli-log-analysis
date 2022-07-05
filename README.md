@@ -35,10 +35,10 @@ For example, try this command from the app directory: "python main.py "./sample_
 In order to use this app, you must have a log file in the same format as the sample data. If not, please use the sample data.
 
 _Being developed for future versions_:
-- Bug fixes [ ]
+- Bug fixes [X]
 - Multiple files/directory as input_path [X]
+- Clean up software design [ ] -> IN PROGRESS.
+- Implement unit testing [ ] -> IN PROGRESS.
 - Different log formats will be supported. [ ]
-- Clean up software design [ ]
-- Implement unit testing [ ]
 - Implement an -a (all) operation [ ]
 
